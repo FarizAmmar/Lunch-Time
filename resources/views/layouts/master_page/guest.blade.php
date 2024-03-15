@@ -12,6 +12,7 @@
     {{-- Styles --}}
     @include('layouts.sections.assets.guest.styles')
 
+    @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -27,6 +28,7 @@
     </div>
 
     {{-- Scripts --}}
+    @livewireScripts
     @include('layouts.sections.assets.guest.scripts')
 </body>
 

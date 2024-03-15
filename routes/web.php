@@ -14,6 +14,6 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware('auth');
+Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

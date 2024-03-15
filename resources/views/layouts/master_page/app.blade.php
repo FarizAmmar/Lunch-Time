@@ -10,30 +10,31 @@
     {{-- Styles --}}
     @include('layouts.sections.assets.auth.styles')
 
+    @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
     <div class="wrapper">
         {{-- Sidebar --}}
-        @include('layouts.sections.components.side-navigation')
+        @include('layouts.sections.components.auth.side-navigation')
 
         <div class="main">
             {{-- Navbar --}}
-            @include('layouts.sections.components.top-navigation')
+            @include('layouts.sections.components.auth.top-navigation')
 
             <main class="content">
                 @yield('main-content')
             </main>
 
             {{-- Footer --}}
-            @include('layouts.sections.components.footer-navigation')
+            @include('layouts.sections.components.auth.footer-navigation')
         </div>
     </div>
 
     {{-- Scripts --}}
+    @livewireScripts
     @include('layouts.sections.assets.auth.scripts')
-    @stack('scripts')
 </body>
 
 </html>
