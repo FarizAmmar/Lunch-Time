@@ -1,6 +1,6 @@
 <nav id="sidebar" class="sidebar js-sidebar">
     <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand" href="{{ route('dashboard') }}" wire:navigate>
+        <a class="sidebar-brand" href="/" wire:navigate>
             <span class="align-middle">AdminKit</span>
         </a>
 

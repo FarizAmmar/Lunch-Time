@@ -1,9 +1,7 @@
 <?php
 
-use App\Livewire\Dashboard;
-use App\Livewire\Pages\Login;
-use App\Livewire\Pages\Register;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Dashboard::class)->name('dashboard')->middleware('auth');
-Route::get('/login', Login::class)->name('login');
-Route::get('/register', Register::class)->name('register');
+Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware('auth');
+
+require __DIR__ . '/auth.php';
