@@ -2,6 +2,7 @@
 
 namespace App\Partials;
 
+use App\Models\User;
 use Livewire\Component;
 
 class RegisterForm extends Component
@@ -13,11 +14,20 @@ class RegisterForm extends Component
 
     public function register()
     {
-        $validated = $this->validate([
+        $this->validate([
             'name' => 'required|min:3',
             'email' => 'required|min:3',
             'password' => 'required|min:3',
         ]);
+
+        // Save Method Eloquent
+        $user = new User();
+        $user->name = $this->name;
+        $user->email = $this->email;
+        $user->password = $this->password;
+        $user->save();
+
+        return redirect(route('login'));
     }
 
     public function render()
