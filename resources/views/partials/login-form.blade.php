@@ -2,21 +2,26 @@
     <form wire:submit='login'>
         <div class="mb-3">
             <label class="form-label">Email</label>
-            <input class="form-control form-control-lg" type="email" wire:model="email" placeholder="Enter your email" />
-
-            @error('email')
-                <p class="error-message mt-1 text-sm">{{ $message }}</p>
-            @enderror
+            <x-text-input type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
+                placeholder="Enter your email address" wire:model='email'>
+                <x-slot:message>
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                </x-slot>
+            </x-text-input>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Password</label>
-            <input class="form-control form-control-lg" type="password" wire:model="password"
-                placeholder="Enter your password" />
-
-            @error('password')
-                <p class="error-message mt-1 text-sm">{{ $message }}</p>
-            @enderror
+            <x-text-input type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}"
+                wire:model='password'>
+                <x-slot:message>
+                    @error('password')
+                        {{ $message }}
+                    @enderror
+                </x-slot>
+            </x-text-input>
         </div>
 
         @error('login_failed')
@@ -24,7 +29,7 @@
         @enderror
 
         <div class="d-grid mt-4 gap-2">
-            <button type="submit" class="btn btn-lg btn-primary">Log in</button>
+            <x-button class="btn-sm btn-primary w-100" label="Log in"></x-button>
         </div>
     </form>
 </div>
