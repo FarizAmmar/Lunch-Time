@@ -26,14 +26,14 @@
 
         <div class="mb-3">
             <label class="form-label">Password</label>
-            <input class="form-control form-control-sm @error('password')
-            is-invalid
-            @enderror"
-                type="password" wire:model="password" placeholder="Enter password" />
-
-            @error('password')
-                <p class="invalid-feedback">{{ $message }}</p>
-            @enderror
+            <x-text-input type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
+                placeholder="Enter your email address" wire:model='email'>
+                <x-slot:message>
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                </x-slot>
+            </x-text-input>
         </div>
 
         @error('registration_failed')
@@ -41,7 +41,7 @@
         @enderror
 
         <div class="d-grid mt-3 gap-2">
-            <button type="submit" class="btn btn-lg btn-primary">Sign up</button>
+            <x-button class="btn-sm btn-primary w-100" label="Sign Up"></x-button>
         </div>
     </form>
 </div>
