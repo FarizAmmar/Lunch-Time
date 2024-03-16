@@ -2,8 +2,7 @@
     <form wire:submit='login'>
         <div class="mb-3">
             <label class="form-label">Email</label>
-            <input class="form-control form-control-lg" type="email"
-                wire:model="email" placeholder="Enter your email" />
+            <input class="form-control form-control-lg" type="email" wire:model="email" placeholder="Enter your email" />
 
             @error('email')
                 <p class="error-message mt-1 text-sm">{{ $message }}</p>
@@ -12,8 +11,8 @@
 
         <div class="mb-3">
             <label class="form-label">Password</label>
-            <input class="form-control form-control-lg" type="password"
-                wire:model="password" placeholder="Enter your password" />
+            <input class="form-control form-control-lg" type="password" wire:model="password"
+                placeholder="Enter your password" />
 
             @error('password')
                 <p class="error-message mt-1 text-sm">{{ $message }}</p>

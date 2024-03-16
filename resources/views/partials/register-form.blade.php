@@ -14,14 +14,14 @@
 
         <div class="mb-3">
             <label class="form-label">Email</label>
-            <input class="form-control form-control-sm @error('email')
-            is-invalid
-            @enderror"
-                type="text" wire:model="email" placeholder="Enter your email" />
-
-            @error('email')
-                <p class="invalid-feedback">{{ $message }}</p>
-            @enderror
+            <x-text-input type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
+                placeholder="Enter your email address" wire:model='email'>
+                <x-slot:message>
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                </x-slot>
+            </x-text-input>
         </div>
 
         <div class="mb-3">
