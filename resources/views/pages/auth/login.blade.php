@@ -8,6 +8,13 @@
                     <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 d-table h-100 mx-auto">
                         <div class="d-table-cell align-middle">
 
+                            @if (session('success'))
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            @endif
+
                             <div class="mt-4 text-center">
                                 <h1 class="h2">Welcome back!</h1>
                                 <p class="lead">
@@ -18,35 +25,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="m-sm-3">
-                                        <form wire:submit='login'>
-                                            <div class="mb-3">
-                                                <label class="form-label">Email</label>
-                                                <input class="form-control form-control-lg" type="email"
-                                                    wire:model="email" placeholder="Enter your email" />
-
-                                                @error('email')
-                                                    <p class="error-message mt-1 text-sm">{{ $message }}</p>
-                                                @enderror
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label">Password</label>
-                                                <input class="form-control form-control-lg" type="password"
-                                                    wire:model="password" placeholder="Enter your password" />
-
-                                                @error('password')
-                                                    <p class="error-message mt-1 text-sm">{{ $message }}</p>
-                                                @enderror
-                                            </div>
-
-                                            @error('login_failed')
-                                                <p class="error-message mt-1 text-sm">{{ $message }}</p>
-                                            @enderror
-
-                                            <div class="d-grid mt-4 gap-2">
-                                                <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
-                                            </div>
-                                        </form>
+                                        {{-- Login Form --}}
+                                        <livewire:login-form>
                                     </div>
                                 </div>
                             </div>

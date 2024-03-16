@@ -20,4 +20,11 @@ class AuthenticatedController extends Controller
         $title = 'Login';
         return view('pages.auth.login', compact('title'));
     }
+
+     // dashboard Index
+     public function dashboard()
+     {
+        $title = 'Dashboard';
+        return view('pages.admin.dashboard', compact('title'));
+     }
 }

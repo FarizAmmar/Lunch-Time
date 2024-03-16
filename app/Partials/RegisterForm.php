@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class RegisterForm extends Component
 {
-
     public $name;
     public $email;
     public $password;
@@ -15,9 +14,9 @@ class RegisterForm extends Component
     public function register()
     {
         $this->validate([
-            'name' => 'required|min:3',
-            'email' => 'required|min:3',
-            'password' => 'required|min:3',
+            'name' => 'required|min:3|max:255',
+            'email' => 'required|min:3|email:dns|unique:users,email',
+            'password' => 'required|min:3|max:255|',
         ]);
 
         // Save Method Eloquent
@@ -27,7 +26,7 @@ class RegisterForm extends Component
         $user->password = $this->password;
         $user->save();
 
-        return redirect(route('login'));
+        return redirect(route('login'))->with('success', 'Registration success, you can login now');
     }
 
     public function render()
