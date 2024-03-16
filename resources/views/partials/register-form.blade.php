@@ -57,7 +57,17 @@
         @enderror
 
         <div class="d-grid mt-3 gap-2">
-            <x-button type="submit" class="btn-sm btn-primary w-100" label="Sign Up"></x-button>
+            <x-button type="submit" class="btn-sm btn-primary w-100">
+                <div wire:loading.remove>
+                    Sign Up
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <div class="spinner-grow spinner-grow-sm text-light" role="status" wire:loading>
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <span wire:loading>Loading...</span>
+                </div>
+            </x-button>
         </div>
     </form>
 </div>
