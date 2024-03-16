@@ -15,9 +15,15 @@
                         <div class="d-table-cell align-middle">
 
                             @if (session('success'))
-                                <div class="alert text-center alert-warning alert-dismissible fade show" role="alert">
+                                <div class="alert text-center alert-success alert-dismissible fade show" role="alert">
                                     {{ session('success') }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    <x-button class="btn-close" data-bs-dismiss="alert"></x-button>
+                                </div>                                
+                            @endif
+                            @if (session('LoginError'))
+                                <div class="alert text-center alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('LoginError') }}
+                                    <x-button class="btn-close" data-bs-dismiss="alert"></x-button>
                                 </div>                                
                             @endif
 

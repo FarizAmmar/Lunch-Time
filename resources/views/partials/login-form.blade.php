@@ -29,7 +29,7 @@
         @enderror
 
         <div class="d-grid mt-4 gap-2">
-            <x-button class="btn-sm btn-primary w-100" label="Log in"></x-button>
+            <x-button type="submit" class="btn-sm btn-primary w-100" label="Log in"></x-button>
         </div>
     </form>
 </div>

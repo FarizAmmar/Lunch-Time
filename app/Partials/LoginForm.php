@@ -2,10 +2,8 @@
 
 namespace App\Partials;
 
-use App\Models\User;
 use Livewire\Component;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class LoginForm extends Component
@@ -16,18 +14,20 @@ class LoginForm extends Component
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|min:3',
-            'password' => 'required|min:3',
+            'email' => 'required',
+            'password' => 'required',
         ]);
-          
+        
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/dashboard')->with('success','Log In Successfully');
         }
  
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        return back()->with('LoginError','Login Failed!');
+    }
+    
+    public function render()
+    {
+        return view('partials.login-form');
     }
 }
