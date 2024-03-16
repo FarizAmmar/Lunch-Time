@@ -1,9 +1,15 @@
 <div>
     <form wire:submit='register'>
         <div class="mb-3">
-            <label class="form-label">Name</label>
             <x-text-input type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
-                placeholder="Enter your username" wire:model='name'>
+                placeholder="Enter your username" withIcon="true" withLabel="true" wire:model='name'>
+                <x-slot:icon>
+                    {{-- Cari flaticon untuk icon, pakai flation aja --}}
+                    <i class="fi fi-rr-user"></i>
+                </x-slot>
+                <x-slot:label>
+                    Username
+                </x-slot>
                 <x-slot:message>
                     @error('name')
                         {{ $message }}
@@ -13,9 +19,14 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Email</label>
             <x-text-input type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
-                placeholder="Enter your email address" wire:model='email'>
+                placeholder="Enter your email address" withLabel="true" withIcon="true" wire:model='email'>
+                <x-slot:icon>
+                    <i class="fi fi-rr-envelope"></i>
+                </x-slot>
+                <x-slot:label>
+                    Email Address
+                </x-slot>
                 <x-slot:message>
                     @error('email')
                         {{ $message }}
@@ -25,9 +36,14 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Password</label>
             <x-text-input type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}"
-                placeholder="Enter your password" wire:model='password'>
+                placeholder="Enter your password" withLabel="true" withIcon="true" wire:model='password'>
+                <x-slot:icon>
+                    <i class="fi fi-rr-key"></i>
+                </x-slot>
+                <x-slot:label>
+                    Password
+                </x-slot>
                 <x-slot:message>
                     @error('password')
                         {{ $message }}
