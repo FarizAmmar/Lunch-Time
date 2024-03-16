@@ -1,4 +1,4 @@
-<script src="{{ asset('theme/plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('theme/plugins/toastr/toastr.min.js') }}"></script>
-<script src="{{ asset('theme/js/app.js') }}"></script>
+{{-- JS Vendor --}}
+<script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
+{{-- Custom JS --}}
 <script src="{{ asset('assets/js/scripts.js') }}"></script>

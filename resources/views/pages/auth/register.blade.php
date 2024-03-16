@@ -15,14 +15,11 @@
                                 </p>
                             </div>
 
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="m-sm-3">
-                                        {{-- Registration Form --}}
-                                        <livewire:register-form>
-                                    </div>
-                                </div>
-                            </div>
+                            {{-- Card --}}
+                            <x-card>
+                                {{-- Registration Form --}}
+                                <livewire:register-form>
+                            </x-card>
 
                             <div class="mb-3 text-center">
                                 Already have account? <a href="{{ route('login') }}" wire:navigate>Log In</a>
