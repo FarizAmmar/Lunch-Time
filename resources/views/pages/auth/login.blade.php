@@ -1,5 +1,11 @@
 @extends('layouts.master_page.guest')
 
+@push('styles')
+    <style>
+        
+    </style>
+@endpush
+
 @section('main-content')
     <div>
         <main class="d-flex w-100">
@@ -9,7 +15,7 @@
                         <div class="d-table-cell align-middle">
 
                             @if (session('success'))
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <div class="alert text-center alert-warning alert-dismissible fade show" role="alert">
                                     {{ session('success') }}
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>                                

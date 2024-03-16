@@ -1,6 +1,7 @@
 <div>
     <form wire:submit='register'>
         <div class="mb-3">
+            <label class="form-label">Name</label>
             <x-text-input type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
                 placeholder="Enter your username" wire:model='name'>
                 <x-slot:message>
