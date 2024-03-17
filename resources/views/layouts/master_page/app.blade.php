@@ -12,23 +12,53 @@
 
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        .wrapper {
+            display: flex;
+            gap: 2;
+        }
+
+        .main-wrapper {
+            flex-grow: 1;
+        }
+
+        .side-navigation {
+            height: 100vh;
+            width: 250px;
+            border-right: 2px solid rgb(201, 201, 201);
+            background-color: rgb(226, 226, 226);
+            transition: 1s;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgb(201, 201, 201);
+            padding: 10px;
+            height: 6vh;
+        }
+
+        .sidebar-body {
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="wrapper">
-        {{-- Sidebar --}}
-        @include('layouts.sections.components.auth.side-navigation')
-
-        <div class="main">
+        <div class="side-navigation">
+            {{-- Sidebar --}}
+            @include('layouts.sections.components.auth.sidebar')
+        </div>
+        <div class="main-wrapper">
             {{-- Navbar --}}
-            @include('layouts.sections.components.auth.top-navigation')
+            @include('layouts.sections.components.auth.navbar')
 
-            <main class="content">
+            {{-- Main Content --}}
+            <main class="p-2">
                 @yield('main-content')
             </main>
-
-            {{-- Footer --}}
-            @include('layouts.sections.components.auth.footer-navigation')
         </div>
     </div>
 
