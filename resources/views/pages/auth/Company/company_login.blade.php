@@ -30,7 +30,7 @@
                             <div class="mt-4 text-center">
                                 <h1 class="h2">Welcome back!</h1>
                                 <p class="lead">
-                                    Sign in to your account to continue
+                                    Sign in to your company account to continue
                                 </p>
                             </div>
 
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="mb-3 text-center">
-                                Don't have an account? <a href="{{ route('register') }}" wire:navigate>Sign up</a>
+                                Don't have an account? <a href="{{ route('register_company') }}" wire:navigate>Sign up</a>
                             </div>
                         </div>
                     </div>

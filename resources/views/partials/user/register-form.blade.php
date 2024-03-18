@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit='register'>
+    <form wire:submit='register_user'>
         <div class="mb-3">
             <x-text-input type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
                 placeholder="Enter your username" withIcon="true" withLabel="true" wire:model='name'>

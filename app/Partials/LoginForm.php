@@ -11,14 +11,15 @@ class LoginForm extends Component
     public $email;
     public $password;
 
-    public function login(Request $request)
-    {
+    public function login_user(Request $request)
+    {        
         $credentials = $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
         
         if (Auth::attempt($credentials)) {
+        //if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])){
             $request->session()->regenerate();
             return redirect()->intended('/dashboard')->with('success','Log In Successfully');
         }
@@ -28,6 +29,6 @@ class LoginForm extends Component
     
     public function render()
     {
-        return view('partials.login-form');
+        return view('partials.user.login-form');
     }
 }

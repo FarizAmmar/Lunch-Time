@@ -11,7 +11,7 @@ class RegisterForm extends Component
     public $email;
     public $password;
 
-    public function register()
+    public function register_user()
     {
         $this->validate([
             'name' => 'required|min:3|max:255',
@@ -31,6 +31,6 @@ class RegisterForm extends Component
 
     public function render()
     {
-        return view('partials.register-form');
+        return view('partials.user.register-form');
     }
 }

@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit='login'>
+    <form wire:submit='login_company'>
         <div class="mb-3">
             <label class="form-label">Email</label>
             <x-text-input type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
@@ -29,7 +29,7 @@
         @enderror
 
         <div class="d-grid mt-4 gap-2">
-            <x-button type="submit" class="btn-sm btn-primary w-100" label="Log in"></x-button>
+            <x-button type="submit" class="btn-sm btn-primary w-100" label="">Log in</x-button>
         </div>
     </form>
 </div>

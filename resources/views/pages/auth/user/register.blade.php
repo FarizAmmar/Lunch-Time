@@ -9,9 +9,9 @@
                         <div class="d-table-cell align-middle">
 
                             <div class="mt-4 text-center">
-                                <h1 class="h2">Get started</h1>
+                                <h1 class="h2">Register Now</h1>
                                 <p class="lead">
-                                    Start creating the best possible user experience for you customers.
+                                    And find out what's today's special menu !
                                 </p>
                             </div>
 
@@ -22,7 +22,7 @@
                             </x-card>
 
                             <div class="mb-3 text-center">
-                                Already have account? <a href="{{ route('login') }}" wire:navigate>Log In</a>
+                                Already have account? <a href="{{ route('login_user') }}" wire:navigate>Log In</a>
                             </div>
                         </div>
                     </div>
