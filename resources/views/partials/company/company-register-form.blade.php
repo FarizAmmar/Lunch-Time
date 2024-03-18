@@ -52,7 +52,7 @@
                             <x-text-input type="text" class="{{ $errors->has('comp_address') ? 'is-invalid' : '' }}"
                                 placeholder="Enter your Company address" withLabel="true" withIcon="true" wire:model='comp_address'>
                                 <x-slot:icon>
-                                    <i class="fi fi-rr-map"></i>
+                                    <i class="fi fi-ss-land-location"></i>
                                 </x-slot>
                                 <x-slot:label>
                                     Company Address
@@ -70,7 +70,7 @@
                             <x-text-input type="text" class="{{ $errors->has('comp_telp') ? 'is-invalid' : '' }}"
                                 placeholder="(+62) 000-0000-0000" withLabel="true" withIcon="true" wire:model='comp_telp' maxlength="12">
                                 <x-slot:icon>
-                                    <i class="fi fi-rr-telephone"></i>
+                                    <i class="fi fi-rr-phone-call"></i>
                                 </x-slot>
                                 <x-slot:label>
                                     Company Phone Number
@@ -137,7 +137,7 @@
                         <x-text-input type="text" class="{{ $errors->has('comp_cp_address') ? 'is-invalid' : '' }}"
                             placeholder="Enter your email address" withLabel="true" withIcon="true" wire:model='comp_cp_address'>
                             <x-slot:icon>
-                                <i class="fi fi-rr-map"></i>
+                                <i class="fi fi-ss-land-location"></i>
                             </x-slot>
                             <x-slot:label>
                                 Contact Person Address
@@ -155,7 +155,7 @@
                         <x-text-input type="text" class="{{ $errors->has('comp_cp_telp') ? 'is-invalid' : '' }}"
                             placeholder="(+62) 000-0000-0000" withLabel="true" withIcon="true" wire:model='comp_cp_telp'>
                             <x-slot:icon>
-                                <i class="fi fi-rr-telephone"></i>
+                                <i class="fi fi-rr-phone-call"></i>
                             </x-slot>
                             <x-slot:label>
                                 Contact Person Phone Number
