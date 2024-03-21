@@ -1,40 +1,50 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-lg-0 mb-2 me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
+ <!--  Header Start -->
+ <header class="app-header">
+     <nav class="navbar navbar-expand-lg navbar-light">
+         <ul class="navbar-nav">
+             <li class="nav-item d-block d-xl-none">
+                 <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                     <i class="ti ti-menu-2"></i>
+                 </a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                     <i class="ti ti-bell-ringing"></i>
+                     <div class="notification bg-primary rounded-circle"></div>
+                 </a>
+             </li>
+         </ul>
+         <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+             <ul class="navbar-nav align-items-center justify-content-end ms-auto flex-row">
+                 <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank"
+                     class="btn btn-primary">Download Free</a>
+                 <li class="nav-item dropdown">
+                     <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                         data-bs-toggle="dropdown" aria-expanded="false">
+                         <img src="{{ asset('assets/template/assets/images/profile/user-1.jpg') }}" alt=""
+                             width="35" height="35" class="rounded-circle">
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                         <div class="message-body">
+                             <a href="javascript:void(0)" class="d-flex align-items-center dropdown-item gap-2">
+                                 <i class="ti ti-user fs-6"></i>
+                                 <p class="fs-3 mb-0">My Profile</p>
+                             </a>
+                             <a href="javascript:void(0)" class="d-flex align-items-center dropdown-item gap-2">
+                                 <i class="ti ti-mail fs-6"></i>
+                                 <p class="fs-3 mb-0">My Account</p>
+                             </a>
+                             <a href="javascript:void(0)" class="d-flex align-items-center dropdown-item gap-2">
+                                 <i class="ti ti-list-check fs-6"></i>
+                                 <p class="fs-3 mb-0">My Task</p>
+                             </a>
+                             <a href="./authentication-login.html"
+                                 class="btn btn-outline-primary d-block mx-3 mt-2">Logout</a>
+                         </div>
+                     </div>
+                 </li>
+             </ul>
+         </div>
+     </nav>
+ </header>
+ <!--  Header End -->
