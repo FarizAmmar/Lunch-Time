@@ -12,53 +12,28 @@
 
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>
-        .wrapper {
-            display: flex;
-            gap: 2;
-        }
-
-        .main-wrapper {
-            flex-grow: 1;
-        }
-
-        .side-navigation {
-            height: 100vh;
-            width: 250px;
-            border-right: 2px solid rgb(201, 201, 201);
-            background-color: rgb(226, 226, 226);
-            transition: 1s;
-        }
-
-        .sidebar-header {
-            display: flex;
-            align-items: center;
-            border-bottom: 2px solid rgb(201, 201, 201);
-            padding: 10px;
-            height: 6vh;
-        }
-
-        .sidebar-body {
-            padding: 10px;
-        }
-    </style>
 </head>
 
 <body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
 
-    <div class="wrapper">
-        <div class="side-navigation">
-            {{-- Sidebar --}}
-            @include('layouts.sections.components.auth.sidebar')
-        </div>
-        <div class="main-wrapper">
-            {{-- Navbar --}}
+        {{-- Sidebar --}}
+        @include('layouts.sections.components.auth.sidebar')
+
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            {{-- Header / Navbar --}}
             @include('layouts.sections.components.auth.navbar')
 
-            {{-- Main Content --}}
-            <main class="p-2">
+            <div class="container-fluid">
+                {{-- Main-content --}}
                 @yield('main-content')
-            </main>
+
+                {{-- Footer --}}
+                @include('layouts.sections.components.auth.footer')
+            </div>
         </div>
     </div>
 
