@@ -5,7 +5,7 @@
          <div class="brand-logo d-flex align-items-center justify-content-between">
              <a href="{{ route('dashboard') }}" class="text-nowrap logo-img">
                  <img src="{{ asset('assets/template/assets/images/logos/dark-logo.svg') }}" width="180"
-                     alt="" />
+                     alt="logo" />
              </a>
              <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                  <i class="ti ti-x fs-8"></i>
@@ -19,7 +19,7 @@
                      <span class="hide-menu">Home</span>
                  </li>
                  <li class="sidebar-item">
-                     <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                     <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                          <span>
                              <i class="ti ti-layout-dashboard"></i>
                          </span>
