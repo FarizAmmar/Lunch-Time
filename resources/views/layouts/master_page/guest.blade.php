@@ -14,6 +14,7 @@
 
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('styles')
 </head>
 
 <body>
@@ -30,6 +31,7 @@
     {{-- Scripts --}}
     @livewireScripts
     @include('layouts.sections.assets.guest.scripts')
+    @stack('scripts')
 </body>
 
 </html>

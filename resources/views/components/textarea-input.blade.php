@@ -10,7 +10,7 @@
 
 <div x-data="{ isShow: false }">
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             @if ($withLabel)
                 <label class="form-label">
                     {{ $label }}
@@ -20,12 +20,12 @@
     </div>
     <div class="position-relative">
         @if ($withIcon)
-            <div class="position-absolute top-50 translate-middle start-0 ms-4 opacity-75">
+            <div class="position-absolute translate-middle start-0 top-0 ms-4 mt-3 pt-1 opacity-75">
                 {{ $icon }}
             </div>
         @endif
-        <input x-bind:type="isShow ? 'text' : '{{ $type }}'"
-            {{ $attributes->merge(['class' => $withIcon ? 'form-control ps-5' : 'form-control', 'placeholder' => $placeholder, 'disabled' => $disabled]) }} />
+        <textarea x-bind:type="isShow ? 'text' : '{{ $type }}'"
+            {{ $attributes->merge(['class' => $withIcon ? 'form-control ps-5' : 'form-control', 'placeholder' => $placeholder, 'rows' => '2', 'cols' => '10', 'disabled' => $disabled]) }}></textarea>
     </div>
     <div class="row">
         @if ($type == 'password')

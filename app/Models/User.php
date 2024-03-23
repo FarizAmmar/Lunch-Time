@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 namespace App\Models;
@@ -19,9 +22,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'account_no',
         'name',
+        'phone_number',
         'email',
+        'address',
         'password',
+        'roles',
     ];
 
     /**
@@ -43,4 +50,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Get all record
+    public function GetAllRecord()
+    {
+        $query = DB::table('public.users')
+            ->select('*')
+            ->get();
+
+        return $query;
+    }
 }

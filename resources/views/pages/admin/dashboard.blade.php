@@ -272,7 +272,7 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-xl-3">
-            <div class="card rounded-2 overflow-hidden">
+            <div class="card rounded-2 overflow-hidden shadow">
                 <div class="position-relative">
                     <a href="javascript:void(0)"><img src="{{ asset('assets/template/assets/images/products/s4.jpg') }}"
                             class="card-img-top rounded-0" alt="...">
@@ -305,7 +305,7 @@
             </div>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <div class="card rounded-2 overflow-hidden">
+            <div class="card rounded-2 overflow-hidden shadow">
                 <div class="position-relative">
                     <a href="javascript:void(0)"><img src="{{ asset('assets/template/assets/images/products/s5.jpg') }}"
                             class="card-img-top rounded-0" alt="..."></a>
@@ -336,7 +336,7 @@
             </div>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <div class="card rounded-2 overflow-hidden">
+            <div class="card rounded-2 overflow-hidden shadow">
                 <div class="position-relative">
                     <a href="javascript:void(0)"><img src="{{ asset('assets/template/assets/images/products/s7.jpg') }}"
                             class="card-img-top rounded-0" alt="..."></a>
@@ -367,7 +367,7 @@
             </div>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <div class="card rounded-2 overflow-hidden">
+            <div class="card rounded-2 overflow-hidden shadow">
                 <div class="position-relative">
                     <a href="javascript:void(0)"><img src="{{ asset('assets/template/assets/images/products/s11.jpg') }}"
                             class="card-img-top rounded-0" alt="..."></a>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Authentication\AuthenticatedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,6 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard');
+Route::get('/', [AuthenticatedController::class, 'dashboard_view'])->middleware('auth')->name('dashboard');
 
 require __DIR__ . '/auth.php';

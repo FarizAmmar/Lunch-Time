@@ -6,38 +6,24 @@ use App\Http\Controllers\Controller;
 
 class AuthenticatedController extends Controller
 {
-    // User Registration Index
-    public function register_user_view()
-    {
-        $title = 'Register';
-        return view('pages.auth.user.register', compact('title'));
-    }
-
-    // User Login Index
-    public function login_user_view()
-    {
-        $title = 'Login';
-        return view('pages.auth.user.login', compact('title'));
-    }
-
     // Company Registration Index
-    public function register_company_view()
+    public function register_view()
     {
         $title = 'Register';
-        return view('pages.auth.company.company_register', compact('title'));
+        return view('pages.auth.register', compact('title'));
     }
 
     // Company Login Index
-    public function login_company_view()
+    public function login_view()
     {
         $title = 'Login';
-        return view('pages.auth.company.company_login', compact('title'));
+        return view('pages.auth.login', compact('title'));
     }
 
-     // dashboard Index
-     public function dashboard()
-     {
+    // dashboard Index
+    public function dashboard_view()
+    {
         $title = 'Dashboard';
         return view('pages.admin.dashboard', compact('title'));
-     }
+    }
 }

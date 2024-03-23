@@ -2,7 +2,7 @@
 
 @push('styles')
     <style>
-        
+
     </style>
 @endpush
 
@@ -15,16 +15,16 @@
                         <div class="d-table-cell align-middle">
 
                             @if (session('success'))
-                                <div class="alert text-center alert-success alert-dismissible fade show" role="alert">
+                                <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                                     {{ session('success') }}
                                     <x-button class="btn-close" data-bs-dismiss="alert"></x-button>
-                                </div>                                
+                                </div>
                             @endif
                             @if (session('LoginError'))
-                                <div class="alert text-center alert-danger alert-dismissible fade show" role="alert">
+                                <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                     {{ session('LoginError') }}
                                     <x-button class="btn-close" data-bs-dismiss="alert"></x-button>
-                                </div>                                
+                                </div>
                             @endif
 
                             <div class="mt-4 text-center">
@@ -38,13 +38,13 @@
                                 <div class="card-body">
                                     <div class="m-sm-3">
                                         {{-- Login Form --}}
-                                        <livewire:login-form>
+                                        <livewire:Auth.login-form>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mb-3 text-center">
-                                Don't have an account? <a href="{{ route('register_company') }}" wire:navigate>Sign up</a>
+                                Don't have an account? <a href="{{ route('register') }}" wire:navigate>Sign up</a>
                             </div>
                         </div>
                     </div>
