@@ -25,7 +25,8 @@
             </div>
         @endif
         <input x-bind:type="isShow ? 'text' : '{{ $type }}'"
-            {{ $attributes->merge(['class' => $withIcon ? 'form-control ps-5' : 'form-control', 'placeholder' => $placeholder, 'disabled' => $disabled]) }} />
+            {{ $attributes->merge(['class' => $withIcon ? 'form-control ps-5' : 'form-control', 'placeholder' => $placeholder, 'disabled' => $disabled]) }}
+            x-mask:dynamic="creditCardMask" />
     </div>
     <div class="row">
         @if ($type == 'password')
@@ -39,3 +40,14 @@
     </div>
     <div class="invalid-feedback">{{ $message }}</div>
 </div>
+
+
+@push('scripts')
+    <script>
+        function creditCardMask(input) {
+            return input.startsWith('34') || input.startsWith('37') ?
+                '9999 999999 99999' :
+                '9999 9999 9999 9999'
+        }
+    </script>
+@endpush

@@ -33,8 +33,8 @@ class RegisterForm extends Component
             'personal_email' => 'required|email|min:3|max:50',
             'personal_address' => 'required|min:5|max:255',
             'personal_phone' => 'required|numeric',
-            'personal_password' => 'required|min:6', // assuming minimum password length is 6 characters
-            'confirm_password' => 'required|same:personal_password', // ensures confirm_password matches personal_password
+            'personal_password' => 'required|min:6',
+            'confirm_password' => 'required|same:personal_password',
         ];
     }
 

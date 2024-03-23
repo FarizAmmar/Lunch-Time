@@ -5,7 +5,7 @@
     'footer' => '',
     'subSlotBottom' => '',
 ])
-<div {{ $attributes->merge(['class' => 'card border-0 shadow']) }}>
+<div {{ $attributes->merge(['class' => 'card border-0']) }}>
     @if ($withHeader)
         <div class="card-header">
             {{ $header }}

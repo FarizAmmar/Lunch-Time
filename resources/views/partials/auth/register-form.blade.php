@@ -64,7 +64,7 @@
 
                 {{-- Company Phone Number --}}
                 <div class="mb-3">
-                    <x-text-input type="text" class="{{ $errors->has('comp_phone') ? 'is-invalid' : '' }}"
+                    <x-text-input type="phone" class="{{ $errors->has('comp_phone') ? 'is-invalid' : '' }}"
                         placeholder="(+62) 000-0000-0000" withLabel="true" withIcon="true" wire:model='comp_phone'
                         maxlength="12">
                         <x-slot:icon>
