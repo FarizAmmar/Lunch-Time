@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Partials\Auth;
 
 use App\Models\Company;
-use Illuminate\Support\Facades\Log;
+use App\Models\User;
 use Livewire\Component;
+
 
 class RegisterForm extends Component
 {
@@ -88,16 +88,54 @@ class RegisterForm extends Component
             $company->company_address = $this->comp_address;
             $company->company_phone_number = $this->comp_phone;
             $company->company_type = 1;
+            $company->created_at = now();
+            $company->updated_at = now();
+            //$this->store_user($company);
 
             $result = $company->saveRecord($company);
 
-            if (!empty($result)) {
-                $this->dispatch('swalError', ['message' => 'Failed to create company record: ' . $result['error']]);
-            }
-            $this->dispatch('swalSuccess', ['message' => 'Company record successfully created!', 'code' => 200, 'url' => route('login')]);
+            return redirect('/login')->with('success', 'Registration Success, You Can Login Now');
+
+            // if (!empty($result)) {
+            //     $this->dispatch('swalError', ['message' => 'Failed to create company record: ' . $result['error']]);
+            // }
+            // $this->dispatch('swalSuccess', ['message' => 'Company record successfully created!', 'code' => 200, 'url' => route('login')]);
+            
+            // if (!empty($result)) {
+            //     $this->dispatch('swalError', [
+            //         'tittle'=>'Registration Failed!',
+            //         'text'=>'Please check your data again',
+            //         'icon'=>'error',
+            //     ]);
+            // }
+            // $this->dispatch('swalSuccess', [
+            //     'tittle'=>'Registration Success!',
+            //     'text'=>'You will be redirected to login page',
+            //     'icon'=>'success',
+            // ]);
+
         } catch (\Exception $e) {
             return response()->json($e->getMessage(), 500);
         }
+    }
+
+    public function store_user($company)
+    {
+        $user = new User();
+        $user->UUID = $company->UUID;
+        $user->account_no = $company->account_no;
+        $user->name = $this->personal_name;
+        $user->email = $this->personal_email;
+        $user->address = $this->personal_address;
+        $user->phone_number = $this->personal_phone;
+        $user->password = bcrypt($this->personal_password);
+        $user->roles = 1;
+        $user->created_at = now();
+        $user->updated_at = now();   
+        
+        $result = $user->saveRecord($user);
+        return;
+        
     }
 
     public function render()

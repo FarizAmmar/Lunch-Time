@@ -33,4 +33,16 @@
             </div>
         </main>
     </div>
+{{-- <script>
+    documen.addEventListener('livewire:initialized',()=>
+    @this.on('swal',(event)=>{
+        const data=event
+        swal.fire({
+            icon:data[0]['icon'],
+            icon:data[1]['tittle'],
+            icon:data[2]['text'],
+        })
+    }
+    ))
+</script> --}}
 @endsection

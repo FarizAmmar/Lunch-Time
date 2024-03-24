@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit='login_company'>
+    <form wire:submit='login'>
         <div class="mb-3">
             <label class="form-label">Email</label>
             <x-text-input type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
