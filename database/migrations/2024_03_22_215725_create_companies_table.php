@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('account_no', 10)->unique();
             $table->string('company_name', 50)->unique();
             $table->string('company_email', 50)->unique();
-            $table->string('companys_phone_number', 20)->unique();
+            $table->string('company_phone_number', 20)->unique();
             $table->string('company_address', 255);
             $table->string('company_type', 50);
             $table->timestamps();

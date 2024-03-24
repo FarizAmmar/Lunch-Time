@@ -10,7 +10,7 @@
                 {{-- Company Name Field --}}
                 <div class="mb-3">
                     <x-text-input type="text" class="{{ $errors->has('comp_name') ? 'is-invalid' : '' }}"
-                        placeholder="Enter your company name" withLabel="true" withIcon="true" wire:model='comp_name'>
+                        placeholder="Enter your company name" withLabel="true" withIcon="true" wire:model="comp_name">
                         <x-slot:icon>
                             <i class="fi fi-rr-building"></i>
                         </x-slot>
@@ -65,8 +65,7 @@
                 {{-- Company Phone Number --}}
                 <div class="mb-3">
                     <x-text-input type="phone" class="{{ $errors->has('comp_phone') ? 'is-invalid' : '' }}"
-                        placeholder="(+62) 000-0000-0000" withLabel="true" withIcon="true" wire:model='comp_phone'
-                        maxlength="12">
+                        placeholder="(+62) 000-0000-0000" withLabel="true" withIcon="true" wire:model='comp_phone'>
                         <x-slot:icon>
                             <i class="fi fi-rr-phone-call"></i>
                         </x-slot>
@@ -145,7 +144,7 @@
 
                 {{-- Contact Person Phone No. Field --}}
                 <div class="mb-3">
-                    <x-text-input type="text" class="{{ $errors->has('personal_phone') ? 'is-invalid' : '' }}"
+                    <x-text-input type="phone" class="{{ $errors->has('personal_phone') ? 'is-invalid' : '' }}"
                         placeholder="(+62) 000-0000-0000" withLabel="true" withIcon="true" wire:model='personal_phone'>
                         <x-slot:icon>
                             <i class="fi fi-rr-phone-call"></i>
@@ -197,18 +196,6 @@
                         @enderror
                     </x-slot>
                 </x-text-input>
-            </div>
-
-            <div class="col-12 mt-3">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
             </div>
 
             <div class="col-12">
