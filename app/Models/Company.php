@@ -44,10 +44,18 @@ class Company extends Model
     public function saveRecord($data)
     {
         try {
-            DB::table('public.companies')->insert($data);
-            return ['success' => true, 'message' => 'Data saved successfully'];
+            DB::table('public.companies')->insert([
+                'UUID' => $data->UUID,
+                'account_no' => $data->account_no,
+                'company_name' => $data->company_name,
+                'company_email' => $data->company_email,
+                'company_phone_number' => $data->company_phone_number,
+                'company_address' => $data->company_address,
+                'company_type' => $data->company_type,
+            ]);
+            return;
         } catch (\Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 }

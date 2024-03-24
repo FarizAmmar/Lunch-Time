@@ -217,3 +217,19 @@
         </div>
     </form>
 </div>
+@push('scripts')
+    <script>
+        Livewire.on('swalSuccess', ({
+            message,
+            url
+        }) => {
+            console.log(message);
+            swalSuccess(message, 200, url);
+        });
+
+        Livewire.on('swalError', message => {
+            swalError(message);
+        });
+    </script>
+    </script>
+@endpush

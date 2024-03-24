@@ -60,4 +60,24 @@ class User extends Authenticatable
 
         return $query;
     }
+
+    // Create a new user record
+    public function saveRecord($data)
+    {
+        try {
+            DB::table('public.users')->insert([
+                'UUID' => $data->UUID,
+                'account_no' => $data->account_no,
+                'name' => $data->name,
+                'phone_number' => $data->phone_number,
+                'email' => $data->email,
+                'address' => $data->address,
+                'password' => $data->password,
+                'roles' => $data->roles,
+            ]);
+            return;
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
 }

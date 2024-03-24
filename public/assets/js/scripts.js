@@ -5,7 +5,7 @@ swalError = async (msg = null, code = 419, url = null) => {
         title: "Lunch Time",
         html: msg,
         showConfirmButton: false,
-        // timer: 1500,
+        timer: 1500,
         willClose: () => {
             if (code == 419) window.location.reload();
         },

@@ -79,22 +79,24 @@ class RegisterForm extends Component
         // Validation Execute
         $this->validate();
 
-        $company = new Company();
-        $company->UUID = $company->createUUID();
-        $company->account_no = $company->createAcc($this->comp_name);
-        $company->company_name = $this->comp_name;
-        $company->company_email = $this->comp_email;
-        $company->company_addres = $this->comp_address;
-        $company->company_phone_number = $this->comp_phone;
-        $company->company_type = 1;
+        try {
+            $company = new Company();
+            $company->UUID = $company->createUUID();
+            $company->account_no = $company->createAcc($this->comp_name);
+            $company->company_name = $this->comp_name;
+            $company->company_email = $this->comp_email;
+            $company->company_address = $this->comp_address;
+            $company->company_phone_number = $this->comp_phone;
+            $company->company_type = 1;
 
-        $response = $company->saveRecord($company->toArray());
+            $result = $company->saveRecord($company);
 
-        if ($response['success']) {
-            return response()->json(['message' => $response['message']], 200);
-        } else {
-            Log::error($response['message']);
-            return response()->json(['message' => 'Failed to save data'], 500);
+            if (!empty($result)) {
+                $this->dispatch('swalError', ['message' => 'Failed to create company record: ' . $result['error']]);
+            }
+            $this->dispatch('swalSuccess', ['message' => 'Company record successfully created!', 'code' => 200, 'url' => route('login')]);
+        } catch (\Exception $e) {
+            return response()->json($e->getMessage(), 500);
         }
     }
 
